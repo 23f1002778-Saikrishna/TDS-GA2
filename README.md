@@ -46,3 +46,7 @@ pytest tests/ -v
 ## License
 
 MIT
+
+## Author
+
+23f1002778@ds.study.iitm.ac.in
