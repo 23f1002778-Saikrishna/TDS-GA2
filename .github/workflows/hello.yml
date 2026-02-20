@@ -1,4 +1,4 @@
-name: Hello World
+name: CI with Cache
 
 on:
   push:
@@ -6,8 +6,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 23f1002778@ds.study.iitm.ac.in
         run: echo "Hello, world!"
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: cache-2d52fcd
+
+      - name: prime-cache-2d52fcd
+        run: echo "Cache hit: ${{ steps.cache-deps.outputs.cache-hit }}"
