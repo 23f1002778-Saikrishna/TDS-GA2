@@ -23,4 +23,5 @@ jobs:
           key: cache-2d52fcd
 
       - name: prime-cache-2d52fcd
-        run: echo "Cache hit: ${{ steps.cache-deps.outputs.cache-hit }}"
+        run: |
+          echo "Cache hit: ${{ steps.cache-deps.outputs.cache-hit }}"
