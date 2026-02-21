@@ -22,5 +22,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: ./Dockerfile
           push: true
           tags: soiboie/tds:23f1002778
